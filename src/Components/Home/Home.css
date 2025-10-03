@@ -1,0 +1,27 @@
+#homr {
+    width: 100%;
+    min-height: calc(100vh - 160px); /* Account for fixed nav */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #homr {
+        padding: 20px 10px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #homr {
+        padding: 15px 5px;
+        gap: 15px;
+    }
+}

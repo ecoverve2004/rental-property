@@ -1,0 +1,26 @@
+/* Main App Container Styles */
+.app-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    margin-top: 160px; /* Height of the fixed navigation */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        margin-top: 120px;
+        padding: 10px;
+    }
+}

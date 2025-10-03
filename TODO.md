@@ -1,0 +1,7 @@
+- [x] Import room images (123.jpeg, 230.jpeg, 231.jpeg, 321.jpeg) in Card.jsx
+- [x] Update the 'rooms' category in propertyImages to use the imported room images
+- [x] Remove the duplicate 'rooms' entry at the end
+- [x] Update alt, price, location for the room properties
+- [x] Fix incorrect import paths for farm images
+- [x] Import images for forest, shops, tent, cabin categories
+- [x] Update propertyImages for forest-houses, shops, tent-houses, cabins to use their respective images
