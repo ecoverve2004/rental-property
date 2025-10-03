@@ -20,6 +20,7 @@ import { FaTreeCity } from "react-icons/fa6";
 
 
 
+
 function Nav({ onCategoryChange, selectedCategory, onViewChange }) {
     const [visible, setVisible] = useState(false);
 
@@ -31,6 +32,18 @@ function Nav({ onCategoryChange, selectedCategory, onViewChange }) {
         console.log(`Clicked on category: ${category}`);
         onCategoryChange(category);
     };
+
+    const categories = [
+        { key: 'trending', icon: <MdOutlineWhatshot />, label: 'Trending' },
+        { key: 'houses', icon: <GiFamilyHouse />, label: 'Houses' },
+        { key: 'rooms', icon: <MdBedroomParent />, label: 'Rooms' },
+        { key: 'farm-houses', icon: <PiFarm />, label: 'Farm Houses' },
+        { key: 'pool-houses', icon: <MdOutlinePool />, label: 'Pool Houses' },
+        { key: 'tent-houses', icon: <LuTentTree />, label: 'Tent Houses' },
+        { key: 'cabins', icon: <GiWoodCabin />, label: 'Cabins' },
+        { key: 'shops', icon: <SiHomeassistantcommunitystore />, label: 'Shops' },
+        { key: 'forest-houses', icon: <FaTreeCity />, label: 'Forest Houses' },
+    ];
 
     return (
         <div id="Nav">
@@ -62,42 +75,16 @@ function Nav({ onCategoryChange, selectedCategory, onViewChange }) {
                 </div>
             </div>
             <div className="nav2">
-                <div className="svg11" onClick={() => handleCategoryClick('trending')}>
-                    <MdOutlineWhatshot />
-                    <h3>Trending</h3>
-                </div>
-                <div className="svg11" onClick={() => handleCategoryClick('houses')}>
-                    <GiFamilyHouse />
-                    <h3>Houses</h3>
-                </div>
-                <div className="svg11" onClick={() => handleCategoryClick('rooms')}>
-                    <MdBedroomParent />
-                    <h3>Rooms</h3>
-                </div>
-                <div className="svg11" onClick={() => handleCategoryClick('farm-houses')}>
-                    <PiFarm />
-                    <h3>Farm Houses</h3>
-                </div>
-                <div className="svg11" onClick={() => handleCategoryClick('pool-houses')}>
-                    <MdOutlinePool />
-                    <h3>Pool Houses</h3>
-                </div>
-                <div className="svg11" onClick={() => handleCategoryClick('tent-houses')}>
-                    <LuTentTree />
-                    <h3>Tent Houses</h3>
-                </div>
-                <div className="svg11" onClick={() => handleCategoryClick('cabins')}>
-                    <GiWoodCabin />
-                    <h3>Cabins</h3>
-                </div>
-                <div className="svg11" onClick={() => handleCategoryClick('shops')}>
-                    <SiHomeassistantcommunitystore />
-                    <h3>Shops</h3>
-                </div>
-                <div className="svg11" onClick={() => handleCategoryClick('forest-houses')}>
-                    <FaTreeCity />
-                    <h3>Forest Houses</h3>
-                </div>
+                {categories.map((cat) => (
+                    <div
+                        key={cat.key}
+                        className={`svg11 ${selectedCategory === cat.key ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick(cat.key)}
+                    >
+                        {cat.icon}
+                        <h3>{cat.label}</h3>
+                    </div>
+                ))}
             </div>
         </div>
     );
